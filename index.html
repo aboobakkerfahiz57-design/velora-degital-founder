@@ -1,1 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>ABOOBAKKAR FAHIZ | Founder & CEO — Velora Digital</title>
+
+  <meta
+    name="description"
+    content="Official founder portfolio of Aboobakker Fahiz, Founder & CEO of Velora Digital."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #05030a;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(123, 0, 255, 0.20), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(190, 0, 255, 0.14), transparent 30%),
+        linear-gradient(135deg, #05030a, #0b0614, #030207);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(5, 3, 10, 0.70);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .nav-logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .nav-logo span {
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: #d8d3e4;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #c36cff;
+      text-shadow: 0 0 15px #8c00ff;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 7% 80px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+
+      position: relative;
+    }
+
+    .hero-text {
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .small-title {
+      color: #bd62ff;
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        120deg,
+        #ffffff,
+        #cfc8d8,
+        #a92cff,
+        #ffffff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 400;
+      color: #d7d0df;
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: #a7a0b3;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7d00ff, #c52cff);
+      box-shadow: 0 0 35px rgba(145, 0, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 45px rgba(180, 0, 255, 0.65);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-outline:hover {
+      border-color: #a72cff;
+      color: #d17cff;
+      transform: translateY(-4px);
+    }
+
+    /* =========================
+       HERO IMAGE
+    ========================== */
+
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      background: #8700ff;
+      filter: blur(100px);
+      opacity: 0.25;
+      z-index: -1;
+    }
+
+    .hero-image img {
+      width: min(100%, 560px);
+      height: 680px;
+      object-fit: cover;
+      object-position: center top;
+
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      box-shadow:
+        0 0 0 1px rgba(157,0,255,0.15),
+        0 25px 80px rgba(0,0,0,0.65),
+        0 0 80px rgba(120,0,255,0.18);
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section {
+      padding: 110px 7%;
+    }
+
+    .section-label {
+      color: #b54cff;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 5vw, 60px);
+      margin-bottom: 55px;
+      letter-spacing: -2px;
+    }
+
+    /* =========================
+       FOUNDER
+    ========================== */
+
+    .founder {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .founder-photo img {
+      width: 100%;
+      max-height: 620px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .founder-content h3 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .role {
+      color: #bd55ff;
+      margin-bottom: 25px;
+      font-size: 17px;
+    }
+
+    .founder-content p {
+      color: #aaa3b4;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      margin-top: 35px;
+      padding: 25px;
+      border-left: 3px solid #9c2cff;
+      background: rgba(255,255,255,0.035);
+      color: #e8e2ee;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    /* =========================
+       EXPERIENCE CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0b0712;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.07);
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 35px;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(3,1,7,0.96),
+          rgba(3,1,7,0.20),
+          transparent
+        );
+    }
+
+    .card-overlay h3 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card-overlay p {
+      color: #c3bccd;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       VISION
+    ========================== */
+
+    .vision {
+      text-align: center;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .vision h2 {
+      font-size: clamp(40px, 6vw, 75px);
+      line-height: 1;
+      margin-bottom: 30px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #a935ff,
+        #ffffff
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .vision p {
+      color: #aaa3b4;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-box {
+      max-width: 950px;
+      margin: auto;
+      text-align: center;
+
+      padding: 70px 30px;
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(137,0,255,0.20),
+          rgba(255,255,255,0.025) 55%,
+          transparent
+        );
+
+      border: 1px solid rgba(181,71,255,0.25);
+      box-shadow: 0 0 80px rgba(125,0,255,0.12);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(40px, 6vw, 70px);
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      color: #aaa3b4;
+      margin-bottom: 35px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      padding: 15px 22px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #ddd7e3;
+      transition: 0.3s;
+    }
+
+    .contact-item:hover {
+      border-color: #a62cff;
+      color: #c96cff;
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 7%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      color: #77717f;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: #b856ff;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      nav {
+        padding: 14px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 130px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        height: 520px;
+      }
+
+      .founder {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 5%;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-image img {
+        height: 470px;
+      }
+
+      .card,
+      .card img {
+        min-height: 390px;
+      }
+
+      .contact-box {
+        padding: 50px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+
+    <a href="#home" class="nav-logo">
+      <img src="velora-digital-logo.png" alt="Velora Digital Logo">
+      <span>VELORA DIGITAL</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#founder">FOUNDER</a></li>
+      <li><a href="#work">WORK</a></li>
+      <li><a href="#vision">VISION</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-text">
+
+        <div class="small-title">
+          Founder • Entrepreneur • Visionary
+        </div>
+
+        <h1>
+          ABOOBAKKAR<br>
+          FAHIZ
+        </h1>
+
+        <h2>
+          Founder & CEO — Velora Digital
+        </h2>
+
+        <p class="hero-description">
+          Building digital experiences, brands and ideas that turn
+          vision into meaningful impact.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#founder" class="btn btn-primary">
+            DISCOVER MY STORY
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            CONTACT ME
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="aboobakker-fahiz-founder.jpg.jpeg"
+          alt="Aboobakker Fahiz Founder"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOUNDER
+    ========================== -->
+
+    <section id="founder">
+
+      <div class="section-label">
+        The Founder
+      </div>
+
+      <h2 class="section-title">
+        Behind the Vision.
+      </h2>
+
+      <div class="founder">
+
+        <div class="founder-photo">
+
+          <img
+            src="aboobakker-fahiz-founder.jpg.jpeg"
+            alt="Aboobakker Fahiz"
+          >
+
+        </div>
+
+
+        <div class="founder-content">
+
+          <h3>ABOOBAKKAR FAHIZ</h3>
+
+          <div class="role">
+            Founder & CEO — Velora Digital
+          </div>
+
+          <p>
+            I believe every powerful business begins with an idea,
+            but the difference is created by execution.
+          </p>
+
+          <p>
+            My journey is focused on building digital brands,
+            developing creative solutions and creating a strong
+            digital presence for businesses.
+          </p>
+
+          <p>
+            Velora Digital represents that vision — a modern
+            digital company built around creativity, technology,
+            strategy and growth.
+          </p>
+
+          <div class="quote">
+            “Digital presence isn't just about being seen.
+            It's about being remembered.”
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WORK
+    ========================== -->
+
+    <section id="work">
+
+      <div class="section-label">
+        What I Do
+      </div>
+
+      <h2 class="section-title">
+        Ideas. Strategy. Execution.
+      </h2>
+
+
+      <div class="cards">
+
+        <!-- ANALYTICS -->
+
+        <div class="card">
+
+          <img
+            src="aboobakker-fahiz-analytics.jpg.jpeg"
+            alt="Marketing Analytics"
+          >
+
+          <div class="card-overlay">
+
+            <h3>Marketing & Analytics</h3>
+
+            <p>
+              Understanding audiences, measuring performance
+              and turning data into smarter decisions.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- LAPTOP -->
+
+        <div class="card">
+
+          <img
+            src="aboobakker-fahiz-laptop.jpg.jpeg"
+            alt="Digital Work"
+          >
+
+          <div class="card-overlay">
+
+            <h3>Digital Strategy</h3>
+
+            <p>
+              Creating modern digital experiences that connect
+              brands with their audiences.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- MEETING -->
+
+        <div class="card">
+
+          <img
+            src="aboobakker-fahiz-meeting.jpg.jpeg"
+            alt="Business Meeting"
+          >
+
+          <div class="card-overlay">
+
+            <h3>Business & Collaboration</h3>
+
+            <p>
+              Ideas become powerful when people collaborate,
+              communicate and build together.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- FOUNDER -->
+
+        <div class="card">
+
+          <img
+            src="aboobakker-fahiz-founder.jpg.jpeg"
+            alt="Founder"
+          >
+
+          <div class="card-overlay">
+
+            <h3>Building the Future</h3>
+
+            <p>
+              Exploring new opportunities and building businesses
+              with a long-term vision.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISION
+    ========================== -->
+
+    <section id="vision">
+
+      <div class="vision">
+
+        <div class="section-label">
+          My Vision
+        </div>
+
+        <h2>
+          Build. Elevate. Lead.
+        </h2>
+
+        <p>
+          My goal is to build a powerful digital ecosystem where
+          creativity, technology and business come together.
+          Every project is an opportunity to create something
+          valuable, memorable and built for the future.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <div class="contact-box">
+
+        <div class="section-label">
+          Get In Touch
+        </div>
+
+        <h2>
+          Let's Build Something.
+        </h2>
+
+        <p>
+          Have an idea, collaboration or business opportunity?
+          Let's connect.
+        </p>
+
+        <div class="contact-details">
+
+          <a
+            class="contact-item"
+            href="tel:+916360695474"
+          >
+            📞 +91 6360695474
+          </a>
+
+          <a
+            class="contact-item"
+            href="mailto:aboobakkerfahiz6@gmail.com"
+          >
+            ✉️ aboobakkerfahiz6@gmail.com
+          </a>
+
+          <a
+            class="contact-item"
+            href="https://wa.me/916360695474"
+            target="_blank"
+          >
+            💬 WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026 <strong>ABOOBAKKER FAHIZ</strong>.
+    Founder & CEO — Velora Digital.
+
+  </footer>
+
+
+</body>
+</html>
