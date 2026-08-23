@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
 
-  <title>ABOOBAKKAR FAHIZ | Founder & CEO — Velora Digital</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
     content="Official founder portfolio of Aboobakker Fahiz, Founder & CEO of Velora Digital."
-  />
+  >
+
+  <title>
+    Aboobakker Fahiz | Founder & CEO
+  </title>
 
   <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -23,603 +34,1571 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: #05030a;
       color: #ffffff;
+
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body.modal-open {
+      overflow: hidden;
     }
 
-    /* =========================
-       BACKGROUND
-    ========================== */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =====================================================
+       GLOBAL BACKGROUND
+    ===================================================== */
 
     body::before {
       content: "";
+
       position: fixed;
       inset: 0;
-      z-index: -2;
+
+      z-index: -3;
+
       background:
-        radial-gradient(circle at 15% 20%, rgba(123, 0, 255, 0.20), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(190, 0, 255, 0.14), transparent 30%),
-        linear-gradient(135deg, #05030a, #0b0614, #030207);
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(139, 0, 255, 0.25),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(193, 0, 255, 0.16),
+          transparent 30%
+        ),
+
+        linear-gradient(
+          135deg,
+          #030207,
+          #0b0414,
+          #05020a
+        );
     }
+
 
     body::after {
       content: "";
+
       position: fixed;
       inset: 0;
-      z-index: -1;
+
+      z-index: -2;
+
       pointer-events: none;
+
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 55px 55px;
-      mask-image: linear-gradient(to bottom, black, transparent);
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 60px 60px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent
+        );
     }
 
-    /* =========================
-       NAVIGATION
-    ========================== */
 
-    nav {
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .navbar {
+
       position: fixed;
+
       top: 0;
       left: 0;
+
       width: 100%;
-      z-index: 1000;
-      padding: 18px 6%;
+
+      z-index: 2000;
+
+      padding:
+        16px
+        6%;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      background: rgba(5, 3, 10, 0.70);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background:
+        rgba(4, 2, 8, 0.72);
+
+      backdrop-filter:
+        blur(20px);
+
+      -webkit-backdrop-filter:
+        blur(20px);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
     }
 
-    .nav-logo {
+
+    .brand {
+
       display: flex;
+
       align-items: center;
+
       gap: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
     }
 
-    .nav-logo img {
+
+    .brand img {
+
       width: 48px;
       height: 48px;
+
       object-fit: contain;
+
       border-radius: 50%;
+
+      filter:
+        drop-shadow(
+          0 0 15px
+          rgba(159,0,255,0.55)
+        );
     }
 
-    .nav-logo span {
-      font-size: 14px;
+
+    .brand-name {
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+      color: #ffffff;
     }
+
 
     .nav-links {
+
       display: flex;
-      gap: 28px;
+
+      align-items: center;
+
+      gap: 30px;
+
       list-style: none;
     }
 
+
     .nav-links a {
-      font-size: 13px;
-      color: #d8d3e4;
+
+      font-size: 12px;
+
+      letter-spacing: 1.5px;
+
+      color: #c5bdcf;
+
       transition: 0.3s;
     }
 
+
     .nav-links a:hover {
-      color: #c36cff;
-      text-shadow: 0 0 15px #8c00ff;
+
+      color: #c15cff;
+
+      text-shadow:
+        0 0 15px
+        rgba(183,0,255,0.8);
     }
 
-    /* =========================
+
+    /* =====================================================
        HERO
-    ========================== */
+    ===================================================== */
 
     .hero {
+
       min-height: 100vh;
-      padding: 150px 7% 80px;
+
+      padding:
+        150px
+        7%
+        90px;
 
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
       align-items: center;
-      gap: 60px;
+
+      gap: 70px;
 
       position: relative;
     }
 
-    .hero-text {
-      animation: fadeUp 1s ease forwards;
+
+    .hero-content {
+
+      animation:
+        heroEnter
+        1s
+        ease
+        forwards;
     }
 
-    .small-title {
-      color: #bd62ff;
-      font-size: 13px;
+
+    .eyebrow {
+
+      color: #b84cff;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
       letter-spacing: 5px;
+
       text-transform: uppercase;
+
       margin-bottom: 22px;
     }
 
-    .hero h1 {
-      font-size: clamp(48px, 7vw, 92px);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
 
-      background: linear-gradient(
-        120deg,
-        #ffffff,
-        #cfc8d8,
-        #a92cff,
-        #ffffff
-      );
+    .hero-title {
+
+      font-size:
+        clamp(
+          50px,
+          7vw,
+          100px
+        );
+
+      line-height: 0.91;
+
+      letter-spacing: -5px;
+
+      margin-bottom: 28px;
+
+      background:
+        linear-gradient(
+          120deg,
+          #ffffff 0%,
+          #d7d1df 35%,
+          #b334ff 65%,
+          #ffffff 100%
+        );
 
       -webkit-background-clip: text;
       background-clip: text;
+
       color: transparent;
     }
 
-    .hero h2 {
-      font-size: clamp(20px, 3vw, 30px);
+
+    .hero-role {
+
+      font-size:
+        clamp(
+          20px,
+          3vw,
+          31px
+        );
+
       font-weight: 400;
-      color: #d7d0df;
+
+      color: #ded7e5;
+
       margin-bottom: 25px;
     }
 
+
     .hero-description {
-      max-width: 600px;
-      color: #a7a0b3;
-      line-height: 1.8;
+
+      max-width: 590px;
+
+      color: #aaa2b4;
+
       font-size: 16px;
+
+      line-height: 1.9;
     }
 
-    .buttons {
+
+    .hero-buttons {
+
       display: flex;
-      gap: 15px;
-      margin-top: 35px;
+
+      gap: 14px;
+
       flex-wrap: wrap;
+
+      margin-top: 35px;
     }
 
-    .btn {
-      padding: 14px 25px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      transition: 0.3s;
-      border: 1px solid rgba(255,255,255,0.15);
-    }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #7d00ff, #c52cff);
-      box-shadow: 0 0 35px rgba(145, 0, 255, 0.35);
-    }
+    .button {
 
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 45px rgba(180, 0, 255, 0.65);
-    }
+      display: inline-flex;
 
-    .btn-outline {
-      background: rgba(255,255,255,0.04);
-    }
+      align-items: center;
 
-    .btn-outline:hover {
-      border-color: #a72cff;
-      color: #d17cff;
-      transform: translateY(-4px);
-    }
-
-    /* =========================
-       HERO IMAGE
-    ========================== */
-
-    .hero-image {
-      position: relative;
-      display: flex;
       justify-content: center;
+
+      padding:
+        14px
+        25px;
+
+      border-radius: 50px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.13);
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
     }
 
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      width: 75%;
-      height: 75%;
-      background: #8700ff;
-      filter: blur(100px);
-      opacity: 0.25;
-      z-index: -1;
-    }
 
-    .hero-image img {
-      width: min(100%, 560px);
-      height: 680px;
-      object-fit: cover;
-      object-position: center top;
+    .button-primary {
 
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        linear-gradient(
+          135deg,
+          #7800ff,
+          #c42cff
+        );
 
       box-shadow:
-        0 0 0 1px rgba(157,0,255,0.15),
-        0 25px 80px rgba(0,0,0,0.65),
-        0 0 80px rgba(120,0,255,0.18);
+        0 0 35px
+        rgba(141,0,255,0.30);
     }
 
-    /* =========================
-       SECTION
-    ========================== */
 
-    section {
-      padding: 110px 7%;
+    .button-primary:hover {
+
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 0 55px
+        rgba(174,0,255,0.55);
     }
 
-    .section-label {
-      color: #b54cff;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+
+    .button-secondary {
+
+      background:
+        rgba(255,255,255,0.04);
     }
 
-    .section-title {
-      font-size: clamp(35px, 5vw, 60px);
-      margin-bottom: 55px;
-      letter-spacing: -2px;
+
+    .button-secondary:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        #a72cff;
+
+      color:
+        #ca6cff;
     }
 
-    /* =========================
-       FOUNDER
-    ========================== */
 
-    .founder {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 70px;
+    /* =====================================================
+       HERO IMAGE
+    ===================================================== */
+
+    .hero-photo {
+
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+
       align-items: center;
     }
 
-    .founder-photo img {
-      width: 100%;
-      max-height: 620px;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.12);
+
+    .hero-photo::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 75%;
+      height: 75%;
+
+      background:
+        #8700ff;
+
+      filter:
+        blur(110px);
+
+      opacity:
+        0.25;
     }
 
-    .founder-content h3 {
-      font-size: 38px;
+
+    .hero-photo img {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 560px;
+
+      height: 690px;
+
+      object-fit: cover;
+
+      object-position:
+        center top;
+
+      border-radius: 28px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.17);
+
+      box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,0.7),
+
+        0 0 80px
+        rgba(133,0,255,0.17);
+    }
+
+
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
+
+    section {
+
+      padding:
+        115px
+        7%;
+    }
+
+
+    .section-label {
+
+      color: #b54cff;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+    }
+
+
+    .section-title {
+
+      font-size:
+        clamp(
+          38px,
+          5vw,
+          65px
+        );
+
+      letter-spacing: -3px;
+
+      margin-bottom: 55px;
+    }
+
+
+    /* =====================================================
+       FOUNDER SECTION
+    ===================================================== */
+
+    .founder-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr
+        1.2fr;
+
+      gap: 75px;
+
+      align-items: center;
+    }
+
+
+    .founder-photo {
+
+      position: relative;
+    }
+
+
+    .founder-photo img {
+
+      width: 100%;
+
+      max-height: 650px;
+
+      object-fit: cover;
+
+      border-radius: 25px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.13);
+    }
+
+
+    .founder-text h3 {
+
+      font-size: 40px;
+
       margin-bottom: 10px;
     }
 
-    .role {
+
+    .founder-role {
+
       color: #bd55ff;
-      margin-bottom: 25px;
+
       font-size: 17px;
+
+      margin-bottom: 28px;
     }
 
-    .founder-content p {
+
+    .founder-text p {
+
       color: #aaa3b4;
+
       line-height: 1.9;
+
       margin-bottom: 20px;
+
+      font-size: 16px;
     }
 
-    .quote {
+
+    .founder-quote {
+
       margin-top: 35px;
-      padding: 25px;
-      border-left: 3px solid #9c2cff;
-      background: rgba(255,255,255,0.035);
-      color: #e8e2ee;
-      font-size: 19px;
+
+      padding:
+        24px
+        25px;
+
+      border-left:
+        3px solid
+        #9c2cff;
+
+      background:
+        rgba(255,255,255,0.035);
+
+      color: #e6dfeb;
+
+      font-size: 18px;
+
       font-style: italic;
+
+      line-height: 1.6;
     }
 
-    /* =========================
-       EXPERIENCE CARDS
-    ========================== */
 
-    .cards {
+    /* =====================================================
+       WORK SECTION
+    ===================================================== */
+
+    .work-grid {
+
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 25px;
     }
 
-    .card {
+
+    .work-card {
+
       position: relative;
-      min-height: 460px;
+
+      min-height: 470px;
+
       overflow: hidden;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #0b0712;
+
+      border-radius: 25px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+      background:
+        #0a0610;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.35s,
+        border-color 0.35s,
+        box-shadow 0.35s;
     }
 
-    .card img {
+
+    .work-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      border-color:
+        rgba(183,56,255,0.45);
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.45);
+    }
+
+
+    .work-card img {
+
       width: 100%;
+
       height: 100%;
-      min-height: 460px;
+
+      min-height: 470px;
+
       object-fit: cover;
-      transition: transform 0.7s ease;
+
+      transition:
+        transform 0.7s ease;
     }
 
-    .card:hover img {
-      transform: scale(1.07);
+
+    .work-card:hover img {
+
+      transform:
+        scale(1.07);
     }
 
-    .card-overlay {
+
+    .work-overlay {
+
       position: absolute;
+
       inset: 0;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: flex-end;
+
       padding: 35px;
 
       background:
         linear-gradient(
           to top,
-          rgba(3,1,7,0.96),
-          rgba(3,1,7,0.20),
-          transparent
+          rgba(3,1,7,0.98),
+          rgba(3,1,7,0.50) 40%,
+          transparent 75%
         );
     }
 
-    .card-overlay h3 {
+
+    .work-overlay h3 {
+
       font-size: 30px;
+
       margin-bottom: 10px;
     }
 
-    .card-overlay p {
-      color: #c3bccd;
+
+    .work-overlay p {
+
+      color: #c2bacb;
+
       line-height: 1.6;
+
+      max-width: 500px;
     }
 
-    /* =========================
-       VISION
-    ========================== */
 
-    .vision {
-      text-align: center;
-      max-width: 950px;
-      margin: auto;
+    .explore {
+
+      display: inline-block;
+
+      margin-top: 20px;
+
+      color: #c35cff;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+
+      transition:
+        letter-spacing 0.3s;
     }
 
-    .vision h2 {
-      font-size: clamp(40px, 6vw, 75px);
-      line-height: 1;
+
+    .work-card:hover
+    .explore {
+
+      letter-spacing: 5px;
+    }
+
+
+    /* =====================================================
+       WORK DETAIL MODAL
+    ===================================================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 5000;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 25px;
+
+      background:
+        rgba(0,0,0,0.84);
+
+      backdrop-filter:
+        blur(20px);
+
+      -webkit-backdrop-filter:
+        blur(20px);
+    }
+
+
+    .modal.show {
+
+      display: flex;
+
+      animation:
+        fadeIn
+        0.3s
+        ease;
+    }
+
+
+    .modal-box {
+
+      position: relative;
+
+      width:
+        min(1150px, 100%);
+
+      max-height:
+        90vh;
+
+      display: grid;
+
+      grid-template-columns:
+        0.85fr
+        1.15fr;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0a0510,
+          #15051f,
+          #07040b
+        );
+
+      border:
+        1px solid
+        rgba(187,59,255,0.35);
+
+      box-shadow:
+
+        0 40px 120px
+        rgba(0,0,0,0.85),
+
+        0 0 90px
+        rgba(126,0,255,0.17);
+
+      animation:
+        modalUp
+        0.4s
+        ease;
+    }
+
+
+    .modal-image {
+
+      min-height:
+        580px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .modal-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+
+    .modal-content {
+
+      padding:
+        60px;
+
+      overflow-y: auto;
+    }
+
+
+    .modal-category {
+
+      color: #bd50ff;
+
+      font-size: 11px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+
+    .modal-content h2 {
+
+      font-size:
+        clamp(
+          38px,
+          5vw,
+          65px
+        );
+
+      line-height: 0.98;
+
+      letter-spacing: -3px;
+
       margin-bottom: 30px;
 
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        #a935ff,
-        #ffffff
-      );
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #c34cff,
+          #ffffff
+        );
 
       -webkit-background-clip: text;
+
       background-clip: text;
+
       color: transparent;
     }
 
-    .vision p {
-      color: #aaa3b4;
-      font-size: 18px;
-      line-height: 1.9;
+
+    .modal-content p {
+
+      color: #b8afc0;
+
+      line-height: 1.85;
+
+      font-size: 15px;
+
+      margin-bottom: 22px;
     }
 
-    /* =========================
+
+    .modal-content h4 {
+
+      color: #ffffff;
+
+      font-size: 18px;
+
+      margin:
+        30px 0
+        14px;
+    }
+
+
+    .modal-content ul {
+
+      padding-left: 22px;
+
+      color: #aaa2b4;
+
+      line-height: 2;
+    }
+
+
+    .modal-content li::marker {
+
+      color: #a72cff;
+    }
+
+
+    .close-button {
+
+      position: absolute;
+
+      top: 20px;
+
+      right: 20px;
+
+      z-index: 10;
+
+      width: 46px;
+      height: 46px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+      background:
+        rgba(0,0,0,0.55);
+
+      color: #ffffff;
+
+      font-size: 25px;
+
+      cursor: pointer;
+
+      transition:
+        0.3s;
+    }
+
+
+    .close-button:hover {
+
+      background:
+        #8c00ff;
+
+      transform:
+        rotate(90deg);
+    }
+
+
+    /* =====================================================
+       VISION
+    ===================================================== */
+
+    .vision-container {
+
+      max-width:
+        950px;
+
+      margin:
+        0 auto;
+
+      text-align:
+        center;
+    }
+
+
+    .vision-title {
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          80px
+        );
+
+      line-height:
+        1;
+
+      letter-spacing:
+        -4px;
+
+      margin-bottom:
+        30px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #a52fff,
+          #ffffff
+        );
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+    }
+
+
+    .vision-text {
+
+      color:
+        #aaa3b4;
+
+      font-size:
+        18px;
+
+      line-height:
+        1.9;
+    }
+
+
+    /* =====================================================
        CONTACT
-    ========================== */
+    ===================================================== */
 
     .contact-box {
-      max-width: 950px;
-      margin: auto;
-      text-align: center;
 
-      padding: 70px 30px;
-      border-radius: 30px;
+      max-width:
+        1000px;
+
+      margin:
+        auto;
+
+      text-align:
+        center;
+
+      padding:
+        75px
+        35px;
+
+      border-radius:
+        30px;
 
       background:
         radial-gradient(
           circle at center,
-          rgba(137,0,255,0.20),
+          rgba(139,0,255,0.20),
           rgba(255,255,255,0.025) 55%,
           transparent
         );
 
-      border: 1px solid rgba(181,71,255,0.25);
-      box-shadow: 0 0 80px rgba(125,0,255,0.12);
+      border:
+        1px solid
+        rgba(181,71,255,0.25);
+
+      box-shadow:
+        0 0 90px
+        rgba(125,0,255,0.12);
     }
+
 
     .contact-box h2 {
-      font-size: clamp(40px, 6vw, 70px);
-      margin-bottom: 20px;
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          75px
+        );
+
+      letter-spacing:
+        -4px;
+
+      margin-bottom:
+        20px;
     }
+
 
     .contact-box p {
-      color: #aaa3b4;
-      margin-bottom: 35px;
+
+      color:
+        #aaa3b4;
+
+      margin-bottom:
+        35px;
+
+      line-height:
+        1.7;
     }
 
-    .contact-details {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+
+    .contact-links {
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        15px;
     }
 
-    .contact-item {
-      padding: 15px 22px;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: #ddd7e3;
-      transition: 0.3s;
+
+    .contact-link {
+
+      padding:
+        15px
+        22px;
+
+      border-radius:
+        50px;
+
+      background:
+        rgba(255,255,255,0.045);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      color:
+        #ddd6e3;
+
+      transition:
+        0.3s;
     }
 
-    .contact-item:hover {
-      border-color: #a62cff;
-      color: #c96cff;
-      transform: translateY(-3px);
+
+    .contact-link:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        #a82cff;
+
+      color:
+        #ca6cff;
+
+      box-shadow:
+        0 0 25px
+        rgba(160,0,255,0.18);
     }
 
-    /* =========================
+
+    /* =====================================================
        FOOTER
-    ========================== */
+    ===================================================== */
 
     footer {
-      padding: 35px 7%;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      color: #77717f;
-      font-size: 12px;
+
+      padding:
+        35px
+        7%;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      text-align:
+        center;
+
+      color:
+        #746d7c;
+
+      font-size:
+        12px;
     }
+
 
     footer strong {
-      color: #b856ff;
+
+      color:
+        #b54cff;
     }
 
-    /* =========================
-       ANIMATIONS
-    ========================== */
 
-    @keyframes fadeUp {
+    /* =====================================================
+       ANIMATIONS
+    ===================================================== */
+
+    @keyframes heroEnter {
+
+      from {
+
+        opacity:
+          0;
+
+        transform:
+          translateY(35px);
+      }
+
+      to {
+
+        opacity:
+          1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    @keyframes fadeIn {
+
       from {
         opacity: 0;
-        transform: translateY(35px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================== */
 
-    @media (max-width: 850px) {
+    @keyframes modalUp {
 
-      nav {
-        padding: 14px 5%;
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(40px)
+          scale(0.97);
       }
 
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media
+    (max-width: 850px) {
+
+      .navbar {
+
+        padding:
+          13px
+          5%;
+      }
+
+
       .nav-links {
+
         display: none;
       }
 
+
       .hero {
-        grid-template-columns: 1fr;
-        padding-top: 130px;
+
+        grid-template-columns:
+          1fr;
+
+        padding:
+          125px
+          5%
+          70px;
+
+        gap:
+          45px;
       }
 
-      .hero-image {
-        order: -1;
+
+      .hero-photo {
+
+        order:
+          -1;
       }
 
-      .hero-image img {
-        height: 520px;
+
+      .hero-photo img {
+
+        height:
+          530px;
       }
 
-      .founder {
-        grid-template-columns: 1fr;
+
+      .founder-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          45px;
       }
 
-      .cards {
-        grid-template-columns: 1fr;
+
+      .work-grid {
+
+        grid-template-columns:
+          1fr;
       }
+
+
+      .modal {
+
+        padding:
+          12px;
+      }
+
+
+      .modal-box {
+
+        grid-template-columns:
+          1fr;
+
+        max-height:
+          94vh;
+
+        overflow-y:
+          auto;
+      }
+
+
+      .modal-image {
+
+        min-height:
+          300px;
+
+        height:
+          300px;
+      }
+
+
+      .modal-content {
+
+        padding:
+          35px
+          25px
+          50px;
+      }
+    }
+
+
+    @media
+    (max-width: 500px) {
 
       section {
-        padding: 80px 5%;
-      }
-    }
 
-    @media (max-width: 500px) {
-
-      .hero h1 {
-        letter-spacing: -2px;
+        padding:
+          80px
+          5%;
       }
 
-      .hero-image img {
-        height: 470px;
+
+      .hero-title {
+
+        letter-spacing:
+          -3px;
       }
 
-      .card,
-      .card img {
-        min-height: 390px;
+
+      .hero-photo img {
+
+        height:
+          480px;
       }
+
+
+      .work-card,
+      .work-card img {
+
+        min-height:
+          390px;
+      }
+
 
       .contact-box {
-        padding: 50px 20px;
+
+        padding:
+          55px
+          20px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- ===================================================
        NAVIGATION
-  ========================== -->
+  ==================================================== -->
 
-  <nav>
+  <header class="navbar">
 
-    <a href="#home" class="nav-logo">
-      <img src="velora-digital-logo.png" alt="Velora Digital Logo">
-      <span>VELORA DIGITAL</span>
+    <a
+      href="#home"
+      class="brand"
+    >
+
+      <img
+        src="velora-digital-logo.png"
+        alt="Velora Digital Logo"
+      >
+
+      <span class="brand-name">
+        VELORA DIGITAL
+      </span>
+
     </a>
 
+
     <ul class="nav-links">
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#founder">FOUNDER</a></li>
-      <li><a href="#work">WORK</a></li>
-      <li><a href="#vision">VISION</a></li>
-      <li><a href="#contact">CONTACT</a></li>
+
+      <li>
+        <a href="#home">
+          HOME
+        </a>
+      </li>
+
+      <li>
+        <a href="#founder">
+          FOUNDER
+        </a>
+      </li>
+
+      <li>
+        <a href="#work">
+          WORK
+        </a>
+      </li>
+
+      <li>
+        <a href="#vision">
+          VISION
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">
+          CONTACT
+        </a>
+      </li>
+
     </ul>
 
-  </nav>
+  </header>
 
 
-  <!-- =========================
+
+  <!-- ===================================================
        HERO
-  ========================== -->
+  ==================================================== -->
 
-  <main id="home">
+  <main>
 
-    <section class="hero">
 
-      <div class="hero-text">
+    <section
+      id="home"
+      class="hero"
+    >
 
-        <div class="small-title">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
           Founder • Entrepreneur • Visionary
         </div>
 
-        <h1>
-          ABOOBAKKAR<br>
+
+        <h1 class="hero-title">
+
+          ABOOBAKKAR
+          <br>
           FAHIZ
+
         </h1>
 
-        <h2>
-          Founder & CEO — Velora Digital
+
+        <h2 class="hero-role">
+
+          Founder & CEO —
+          Velora Digital
+
         </h2>
 
+
         <p class="hero-description">
-          Building digital experiences, brands and ideas that turn
-          vision into meaningful impact.
+
+          Building digital experiences, brands and ideas
+          that turn vision into meaningful impact.
+
         </p>
 
-        <div class="buttons">
 
-          <a href="#founder" class="btn btn-primary">
+        <div class="hero-buttons">
+
+          <a
+            href="#founder"
+            class="button button-primary"
+          >
             DISCOVER MY STORY
           </a>
 
-          <a href="#contact" class="btn btn-outline">
+
+          <a
+            href="#contact"
+            class="button button-secondary"
+          >
             CONTACT ME
           </a>
 
@@ -628,33 +1607,40 @@
       </div>
 
 
-      <div class="hero-image">
+
+      <div class="hero-photo">
 
         <img
           src="aboobakker-fahiz-founder.jpg.jpeg"
-          alt="Aboobakker Fahiz Founder"
+          alt="Aboobakker Fahiz - Founder and CEO"
         >
 
       </div>
 
+
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          FOUNDER
-    ========================== -->
+    ================================================== -->
 
     <section id="founder">
+
 
       <div class="section-label">
         The Founder
       </div>
 
+
       <h2 class="section-title">
         Behind the Vision.
       </h2>
 
-      <div class="founder">
+
+      <div class="founder-grid">
+
 
         <div class="founder-photo">
 
@@ -666,248 +1652,942 @@
         </div>
 
 
-        <div class="founder-content">
 
-          <h3>ABOOBAKKAR FAHIZ</h3>
+        <div class="founder-text">
 
-          <div class="role">
+          <h3>
+            ABOOBAKKAR FAHIZ
+          </h3>
+
+
+          <div class="founder-role">
             Founder & CEO — Velora Digital
           </div>
 
-          <p>
-            I believe every powerful business begins with an idea,
-            but the difference is created by execution.
-          </p>
 
           <p>
-            My journey is focused on building digital brands,
-            developing creative solutions and creating a strong
-            digital presence for businesses.
+
+            I believe every powerful business begins
+            with an idea, but the difference is created
+            through execution.
+
           </p>
+
 
           <p>
-            Velora Digital represents that vision — a modern
-            digital company built around creativity, technology,
-            strategy and growth.
+
+            My journey is focused on building digital
+            brands, developing creative solutions and
+            creating strong digital experiences for
+            businesses and people.
+
           </p>
 
-          <div class="quote">
+
+          <p>
+
+            Velora Digital represents that vision —
+            a modern digital company built around
+            creativity, technology, strategy and growth.
+
+          </p>
+
+
+          <div class="founder-quote">
+
             “Digital presence isn't just about being seen.
             It's about being remembered.”
+
           </div>
 
         </div>
 
       </div>
 
+
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          WORK
-    ========================== -->
+    ================================================== -->
 
     <section id="work">
+
 
       <div class="section-label">
         What I Do
       </div>
+
 
       <h2 class="section-title">
         Ideas. Strategy. Execution.
       </h2>
 
 
-      <div class="cards">
 
-        <!-- ANALYTICS -->
+      <div class="work-grid">
 
-        <div class="card">
+
+        <!-- MARKETING -->
+
+        <article
+          class="work-card"
+          onclick="openWork('analytics')"
+        >
 
           <img
             src="aboobakker-fahiz-analytics.jpg.jpeg"
-            alt="Marketing Analytics"
+            alt="Marketing and Analytics"
           >
 
-          <div class="card-overlay">
 
-            <h3>Marketing & Analytics</h3>
+          <div class="work-overlay">
+
+            <h3>
+              Marketing & Analytics
+            </h3>
+
 
             <p>
-              Understanding audiences, measuring performance
-              and turning data into smarter decisions.
+
+              Data-driven decisions that help
+              businesses understand, improve and grow.
+
             </p>
+
+
+            <span class="explore">
+              EXPLORE →
+            </span>
 
           </div>
 
-        </div>
+        </article>
 
 
-        <!-- LAPTOP -->
 
-        <div class="card">
+        <!-- DIGITAL STRATEGY -->
+
+        <article
+          class="work-card"
+          onclick="openWork('strategy')"
+        >
 
           <img
             src="aboobakker-fahiz-laptop.jpg.jpeg"
-            alt="Digital Work"
+            alt="Digital Strategy"
           >
 
-          <div class="card-overlay">
 
-            <h3>Digital Strategy</h3>
+          <div class="work-overlay">
+
+            <h3>
+              Digital Strategy
+            </h3>
+
 
             <p>
-              Creating modern digital experiences that connect
-              brands with their audiences.
+
+              Creating digital experiences and strategies
+              designed for long-term growth.
+
             </p>
+
+
+            <span class="explore">
+              EXPLORE →
+            </span>
 
           </div>
 
-        </div>
+        </article>
 
 
-        <!-- MEETING -->
 
-        <div class="card">
+        <!-- BUSINESS -->
+
+        <article
+          class="work-card"
+          onclick="openWork('business')"
+        >
 
           <img
             src="aboobakker-fahiz-meeting.jpg.jpeg"
-            alt="Business Meeting"
+            alt="Business and Collaboration"
           >
 
-          <div class="card-overlay">
 
-            <h3>Business & Collaboration</h3>
+          <div class="work-overlay">
+
+            <h3>
+              Business & Collaboration
+            </h3>
+
 
             <p>
-              Ideas become powerful when people collaborate,
-              communicate and build together.
+
+              Building relationships, partnerships
+              and opportunities through collaboration.
+
             </p>
+
+
+            <span class="explore">
+              EXPLORE →
+            </span>
 
           </div>
 
-        </div>
+        </article>
 
 
-        <!-- FOUNDER -->
 
-        <div class="card">
+        <!-- FUTURE -->
+
+        <article
+          class="work-card"
+          onclick="openWork('future')"
+        >
 
           <img
             src="aboobakker-fahiz-founder.jpg.jpeg"
-            alt="Founder"
+            alt="Building the Future"
           >
 
-          <div class="card-overlay">
 
-            <h3>Building the Future</h3>
+          <div class="work-overlay">
+
+            <h3>
+              Building the Future
+            </h3>
+
 
             <p>
-              Exploring new opportunities and building businesses
-              with a long-term vision.
+
+              Turning ideas into meaningful businesses,
+              brands and long-term opportunities.
+
             </p>
+
+
+            <span class="explore">
+              EXPLORE →
+            </span>
 
           </div>
 
-        </div>
+        </article>
+
 
       </div>
+
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          VISION
-    ========================== -->
+    ================================================== -->
 
     <section id="vision">
 
-      <div class="vision">
+
+      <div class="vision-container">
+
 
         <div class="section-label">
           My Vision
         </div>
 
-        <h2>
-          Build. Elevate. Lead.
+
+        <h2 class="vision-title">
+
+          Build.
+          Elevate.
+          Lead.
+
         </h2>
 
-        <p>
-          My goal is to build a powerful digital ecosystem where
-          creativity, technology and business come together.
-          Every project is an opportunity to create something
-          valuable, memorable and built for the future.
+
+        <p class="vision-text">
+
+          My goal is to build a powerful digital ecosystem
+          where creativity, technology and business come
+          together. Every project is an opportunity to
+          create something valuable, memorable and built
+          for the future.
+
         </p>
 
+
       </div>
+
 
     </section>
 
 
-    <!-- =========================
+
+    <!-- =================================================
          CONTACT
-    ========================== -->
+    ================================================== -->
 
     <section id="contact">
 
+
       <div class="contact-box">
+
 
         <div class="section-label">
           Get In Touch
         </div>
 
+
         <h2>
           Let's Build Something.
         </h2>
 
+
         <p>
-          Have an idea, collaboration or business opportunity?
-          Let's connect.
+
+          Have an idea, collaboration or business
+          opportunity? Let's connect.
+
         </p>
 
-        <div class="contact-details">
+
+        <div class="contact-links">
+
 
           <a
-            class="contact-item"
             href="tel:+916360695474"
+            class="contact-link"
           >
-            📞 +91 6360695474
+
+            📞
+            +91 6360695474
+
           </a>
 
+
           <a
-            class="contact-item"
             href="mailto:aboobakkerfahiz6@gmail.com"
+            class="contact-link"
           >
-            ✉️ aboobakkerfahiz6@gmail.com
+
+            ✉️
+            aboobakkerfahiz6@gmail.com
+
           </a>
 
+
           <a
-            class="contact-item"
             href="https://wa.me/916360695474"
             target="_blank"
+            rel="noopener"
+            class="contact-link"
           >
-            💬 WhatsApp
+
+            💬
+            WhatsApp
+
           </a>
+
 
         </div>
 
+
       </div>
 
+
     </section>
+
 
   </main>
 
 
-  <!-- =========================
+
+  <!-- ===================================================
+       WORK DETAIL MODAL
+  ==================================================== -->
+
+  <div
+    id="workModal"
+    class="modal"
+    aria-hidden="true"
+  >
+
+
+    <div class="modal-box">
+
+
+      <button
+        class="close-button"
+        onclick="closeWork()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-image">
+
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+        >
+
+      </div>
+
+
+      <div class="modal-content">
+
+
+        <div
+          id="modalCategory"
+          class="modal-category"
+        >
+        </div>
+
+
+        <h2 id="modalTitle">
+        </h2>
+
+
+        <div
+          id="modalDescription"
+        >
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- ===================================================
        FOOTER
-  ========================== -->
+  ==================================================== -->
 
   <footer>
 
-    © 2026 <strong>ABOOBAKKER FAHIZ</strong>.
-    Founder & CEO — Velora Digital.
+    © 2026
+    <strong>
+      ABOOBAKKAR FAHIZ
+    </strong>.
+
+    Founder & CEO —
+    Velora Digital.
 
   </footer>
+
+
+
+  <!-- ===================================================
+       JAVASCRIPT
+  ==================================================== -->
+
+  <script>
+
+
+    const workData = {
+
+
+      /* -----------------------------------------------
+         MARKETING
+      ------------------------------------------------ */
+
+      analytics: {
+
+        category:
+          "Marketing • Data • Growth",
+
+        title:
+          "Marketing & Analytics",
+
+        image:
+          "aboobakker-fahiz-analytics.jpg.jpeg",
+
+        description: `
+
+          <p>
+
+            Marketing analytics is about understanding
+            what is happening behind every campaign,
+            customer interaction and digital activity.
+
+          </p>
+
+
+          <p>
+
+            Data helps businesses understand their
+            audience, identify opportunities and make
+            better decisions.
+
+          </p>
+
+
+          <h4>
+            What it involves
+          </h4>
+
+
+          <ul>
+
+            <li>
+              Understanding customer behaviour
+            </li>
+
+            <li>
+              Tracking marketing performance
+            </li>
+
+            <li>
+              Analysing website and social media data
+            </li>
+
+            <li>
+              Measuring campaigns and conversions
+            </li>
+
+            <li>
+              Finding opportunities for growth
+            </li>
+
+          </ul>
+
+
+          <h4>
+            The Goal
+          </h4>
+
+
+          <p>
+
+            Turn information into insight, and insight
+            into smarter business decisions.
+
+          </p>
+
+        `
+      },
+
+
+
+      /* -----------------------------------------------
+         DIGITAL STRATEGY
+      ------------------------------------------------ */
+
+      strategy: {
+
+        category:
+          "Technology • Branding • Growth",
+
+        title:
+          "Digital Strategy",
+
+        image:
+          "aboobakker-fahiz-laptop.jpg.jpeg",
+
+        description: `
+
+          <p>
+
+            Digital strategy is the process of planning
+            how a business uses technology and digital
+            platforms to achieve its goals.
+
+          </p>
+
+
+          <p>
+
+            A strong strategy connects branding,
+            websites, social media, customer experience
+            and technology into one clear direction.
+
+          </p>
+
+
+          <h4>
+            What it involves
+          </h4>
+
+
+          <ul>
+
+            <li>
+              Building a strong digital presence
+            </li>
+
+            <li>
+              Website and user experience strategy
+            </li>
+
+            <li>
+              Brand positioning
+            </li>
+
+            <li>
+              Social media direction
+            </li>
+
+            <li>
+              Digital customer experience
+            </li>
+
+            <li>
+              Long-term digital growth
+            </li>
+
+          </ul>
+
+
+          <h4>
+            The Goal
+          </h4>
+
+
+          <p>
+
+            Create a digital ecosystem that makes
+            a brand stronger, more visible and
+            more valuable.
+
+          </p>
+
+        `
+      },
+
+
+
+      /* -----------------------------------------------
+         BUSINESS
+      ------------------------------------------------ */
+
+      business: {
+
+        category:
+          "People • Partnerships • Opportunities",
+
+        title:
+          "Business & Collaboration",
+
+        image:
+          "aboobakker-fahiz-meeting.jpg.jpeg",
+
+        description: `
+
+          <p>
+
+            Great businesses are built through people.
+            Collaboration creates opportunities that
+            are difficult to achieve alone.
+
+          </p>
+
+
+          <p>
+
+            Business collaboration means bringing
+            together different skills, ideas and
+            networks to create something valuable.
+
+          </p>
+
+
+          <h4>
+            What it involves
+          </h4>
+
+
+          <ul>
+
+            <li>
+              Client relationships
+            </li>
+
+            <li>
+              Business partnerships
+            </li>
+
+            <li>
+              Team collaboration
+            </li>
+
+            <li>
+              Networking
+            </li>
+
+            <li>
+              Business development
+            </li>
+
+            <li>
+              Creating new opportunities
+            </li>
+
+          </ul>
+
+
+          <h4>
+            The Goal
+          </h4>
+
+
+          <p>
+
+            Build meaningful relationships that create
+            long-term value for everyone involved.
+
+          </p>
+
+        `
+      },
+
+
+
+      /* -----------------------------------------------
+         FUTURE
+      ------------------------------------------------ */
+
+      future: {
+
+        category:
+          "Entrepreneurship • Innovation • Vision",
+
+        title:
+          "Building the Future",
+
+        image:
+          "aboobakker-fahiz-founder.jpg.jpeg",
+
+        description: `
+
+          <p>
+
+            Building the future starts with having
+            the courage to turn an idea into action.
+
+          </p>
+
+
+          <p>
+
+            Entrepreneurship is about identifying
+            opportunities, solving problems and
+            continuously creating something better.
+
+          </p>
+
+
+          <h4>
+            My Approach
+          </h4>
+
+
+          <ul>
+
+            <li>
+              Think long-term
+            </li>
+
+            <li>
+              Build strong brands
+            </li>
+
+            <li>
+              Embrace technology
+            </li>
+
+            <li>
+              Create meaningful solutions
+            </li>
+
+            <li>
+              Learn and improve continuously
+            </li>
+
+            <li>
+              Build with purpose
+            </li>
+
+          </ul>
+
+
+          <h4>
+            The Vision
+          </h4>
+
+
+          <p>
+
+            Create businesses and digital experiences
+            that continue to grow, evolve and make
+            an impact.
+
+          </p>
+
+        `
+      }
+
+    };
+
+
+
+    /* ===================================================
+       OPEN WORK
+    ==================================================== */
+
+    function openWork(type) {
+
+
+      const data =
+        workData[type];
+
+
+      if (!data) {
+        return;
+      }
+
+
+      document
+        .getElementById("modalCategory")
+        .textContent =
+        data.category;
+
+
+      document
+        .getElementById("modalTitle")
+        .textContent =
+        data.title;
+
+
+      document
+        .getElementById("modalImage")
+        .src =
+        data.image;
+
+
+      document
+        .getElementById("modalImage")
+        .alt =
+        data.title;
+
+
+      document
+        .getElementById("modalDescription")
+        .innerHTML =
+        data.description;
+
+
+      document
+        .getElementById("workModal")
+        .classList
+        .add("show");
+
+
+      document.body
+        .classList
+        .add("modal-open");
+
+
+      document
+        .getElementById("workModal")
+        .setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+    }
+
+
+
+    /* ===================================================
+       CLOSE WORK
+    ==================================================== */
+
+    function closeWork() {
+
+
+      document
+        .getElementById("workModal")
+        .classList
+        .remove("show");
+
+
+      document.body
+        .classList
+        .remove("modal-open");
+
+
+      document
+        .getElementById("workModal")
+        .setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+    }
+
+
+
+    /* ===================================================
+       CLICK OUTSIDE MODAL
+    ==================================================== */
+
+    document
+      .getElementById("workModal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+
+          if (
+            event.target ===
+            this
+          ) {
+
+            closeWork();
+
+          }
+
+        }
+      );
+
+
+
+    /* ===================================================
+       ESC KEY
+    ==================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeWork();
+
+        }
+
+      }
+    );
+
+
+  </script>
 
 
 </body>
